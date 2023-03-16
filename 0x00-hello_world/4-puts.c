@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- * @brief This is the main function of the program.
+ * brief This is the main function of the program.
  *
- * @we use puts function to print the content of char str[].
- * @return int 0 if the program executed successfully.
+ * we use puts function to print the content of char str[].
+ * return int 0 if the program executed successfully.
  */
 int main(void)
 {
