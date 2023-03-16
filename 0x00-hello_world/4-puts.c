@@ -1,9 +1,8 @@
 #include <stdio.h>
 /**
- * brief This is the main function of the program.
+ * main - Entry point
  *
- * we use puts function to print the content of char str[].
- * return int 0 if the program executed successfully.
+ * Return : Always 0 (success)
  */
 int main(void)
 {
