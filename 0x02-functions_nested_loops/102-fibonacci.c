@@ -8,8 +8,11 @@
 
 int main(void)
 {
-	long int a = 1, b = 2, c; 
+	long int a, b, c; 
 	int i;
+
+	a = 1;
+	b = 2;
 	printf("%ld, %ld", a, b);
 	for (i = 0; i < 50; i++)
 	{
