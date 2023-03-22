@@ -10,10 +10,10 @@ int main(void)
 {
 	long int a = 1, b = 2, c; 
 	int i;
-
+	printf("%ld, %ld", a, b);
 	for (i = 0; i < 50; i++)
 	{
-		printf("%ld, ", a);
+		printf(", %ld", a);
 		c = a + b;
 		a = b;
 		b = c;
