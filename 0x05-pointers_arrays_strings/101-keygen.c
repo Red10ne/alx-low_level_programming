@@ -1,49 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-#define PASSWORD_LENGTH 12
 /**
- * main - the main function
- * Return: 0
+ * main - generates keygen.
+ * Return: 0 Always.
  */
-char *generate_password(void);
 
 int main(void)
-{	
-	char *password = generate_password();
-	printf("%s\n", password);
-	free(password);
-	return (0);
-}
-/**
- * generate_password - function that generete passwd.
- * Return: 0
- */
-char *generate_password(void)
 {
-	static const char valid_chars[] =
-        "abcdefghijklmnopqrstuvwxyz"
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        "0123456789"
-        "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-	const int num_chars = sizeof(valid_chars) - 1;
-	
-	char *password = malloc(PASSWORD_LENGTH + 1);
+	int r = 0, c = 0;
+	time_t t;
 
-	if (!password)
+	srand((unsigned int) time(&t));
+	while (c < 2772)
 	{
-		fprintf(stderr, "Error: failed to allocate memory for password\n");
-		exit(EXIT_FAILURE);
+		r = rand() % 128;
+		if ((c + r) > 2772)
+			break;
+		c = c + r;
+		printf("%c", r);
 	}
-	srand(time(NULL));
-	int i;
-
-	for (i = 0; i < PASSWORD_LENGTH; i++)
-	{
-		password[i] = valid_chars[rand() % num_chars];
-	}
-	password[PASSWORD_LENGTH] = '\0';
-	
-	return (password);
+	printf("%c\n", (2772 - c));
+	return (0);
 }
